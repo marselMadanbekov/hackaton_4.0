@@ -165,36 +165,40 @@
                                 <div class="card-light-blue">
                                     <h4 class="card-title">Реквизиты</h4>
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table table-sm">
-                                        <tbody>
-                                        <tr>
-                                            <td>ИНН</td>
-                                            <td th:text="${organization.inn}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>ОКПО</td>
-                                            <td th:text="${organization.okpo}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Рег. номер</td>
-                                            <td th:text="${organization.registration_number}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Дата регистрации</td>
-                                            <td th:text="${organization.registration_date}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Руководитель</td>
-                                            <td th:text="${organization.head}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Юридический адрес</td>
-                                            <td th:text="${organization.legal_address}"></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <hr>
+
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <p class="text-muted">ИНН :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.inn}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">ОКПО :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.okpo}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">Рег. номер :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.registration_number}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">Дата регистрации :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.registration_date}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">Руководитель :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.head}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">Юридический адрес :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.legal_address}"></p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -205,32 +209,33 @@
                                     <h4 class="card-title">Контактная информация</h4>
                                 </div>
                                 <hr>
-                                <div class="table-responsive">
-                                    <table class="table table-sm">
-                                        <tbody>
-                                        <tr>
-                                            <td>Почтовый адрес</td>
-                                            <td th:text="${organization.postal_address}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email</td>
-                                            <td th:text="${organization.email}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Сайт</td>
-                                            <td th:text="${organization.website}"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Телефон</td>
-                                            <td th:text="${organization.phone}">43984939428</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ФИО контактного лица</td>
-                                            <td th:text="${organization.contact_person_name}"></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <p class="text-muted">Почтовый адрес :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.postal_address}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">Email :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.email}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">Сайт :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.website}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">Телефон :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.phone}"></p>
+                                    </li>
+                                    <li>
+                                        <p class="text-muted">ФИО контактного лица :</p>
+                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                           th:text="${organization.contact_person_name}"></p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -241,7 +246,7 @@
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023.
-                            Академия Роста. Все права защищены</span>
+                            ManasBM. Все права защищены</span>
                 </div>
             </footer>
             <!-- partial -->

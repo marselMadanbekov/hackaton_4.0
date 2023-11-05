@@ -226,7 +226,7 @@
                                         <div class="ml-xl-4 mt-3">
                                             <a class="card-title" th:href="'/purchases/purchase-details?purchaseId=' + ${purchase.id}"
                                                th:text="${purchase.product} + ' - ' + ${purchase.registration_number}"></a>
-                                            <h1 class="text-primary" th:text="${purchase.starting_price}"></h1>
+                                            <h2 class="text-primary" th:text="${purchase.starting_price}"></h2>
                                             <h3 class="font-weight-500 mb-xl-4 text-primary"
                                                 th:text="${purchase.currency_title}">KGS, Сом</h3>
                                             <p class="font-weight-bold">Предмет закупки : </p>
@@ -236,7 +236,7 @@
                                     <div class="col-md-12 col-xl-8">
                                         <div class="border-right">
                                             <div class="table-responsive mb-3 mb-md-0 mt-3">
-                                                <ul class="list-arrow">
+                                                <ul class="list-unstyled">
                                                     <li>
                                                         <p class="text-muted">Заказчик :</p>
                                                         <p class="font-weight-bold mb-2 mb-xl-0"
@@ -253,6 +253,12 @@
                                                         <p class="text-muted">Статус :</p>
                                                         <p class="font-weight-bold mb-2 mb-xl-0"
                                                            th:text="${purchase.status}"></p>
+                                                    </li>
+                                                    <hr>
+                                                    <li>
+                                                        <p class="text-muted">Достоверность :</p>
+                                                        <p th:if="${purchase.gpt_analyze > 90}" class="badge badge-success" th:text="${purchase.gpt_analyze} + ' %'"></p>
+                                                        <p th:if="${purchase.gpt_analyze < 90}" class="badge badge-warning" th:text="${purchase.gpt_analyze} + ' %'"></p>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -287,7 +293,7 @@
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023.
-                            Академия Роста. Все права защищены</span>
+                            ManasBM. Все права защищены</span>
                 </div>
             </footer>
             <!-- partial -->

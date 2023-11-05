@@ -18,7 +18,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: `http://192.168.43.33:8082/api/organizations/diagram/${20}`,
+            url: `http://192.168.43.33:8082/api/organizations/diagram/${organizationId}`,
             method: 'GET',
             dataType: 'json',
             success: function (response) {

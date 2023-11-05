@@ -16,6 +16,7 @@ public class Purchase {
     private String category;
     private Integer proposal_validity_days;
     private Double fee_amount;
+    private Integer gpt_analyze;
     private String status;
     private String organization;
 }

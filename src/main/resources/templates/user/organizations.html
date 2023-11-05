@@ -207,7 +207,7 @@
                 <div class="row">
                     <div class="col-md-6 grid-margin stretch-card" th:each="organization : ${organizations.data}">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column justify-content-between">
                                 <div class="card-light-blue mb-3">
                                     <a class="card-title" th:text="${organization.name}" th:href="'/organizations/organization-details?id=' + ${organization.id}"></a>
                                 </div>
@@ -255,7 +255,7 @@
             <footer class="footer">
                 <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023.
-                            Академия Роста. Все права защищены</span>
+                            ManasBM. Все права защищены</span>
                 </div>
             </footer>
             <!-- partial -->

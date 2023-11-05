@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
 
         $.ajax({
-            url: `http://192.168.43.33:8082/api/organizations/success/graphic/${20}?month=` + month,
+            url: `http://192.168.43.33:8082/api/organizations/success/graphic/${organizationId}?month=` + month,
             method: 'GET',
             dataType: 'json',
             success: function (response) {

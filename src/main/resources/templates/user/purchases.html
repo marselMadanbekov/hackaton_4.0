@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/static/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/static/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/static/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/static/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/vendors/mdi/css/materialdesignicons.min.css">
+
+    <link rel="stylesheet" href="/static/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="/static/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/static/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/static/images/favicon.png"/>
+</head>
+
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+            <a class="navbar-brand brand-logo mr-5" href="/super-admin/branches"><img src="/static/images/logo.png"
+                                                                                      class="mr-2"
+                                                                                      alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="/super-admin/branches"><img src="/static/images/logo-mini.png"
+                                                                                      alt="logo"/></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                <span class="icon-menu"></span>
+            </button>
+            <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                       data-toggle="dropdown">
+                        <i class="icon-bell mx-0"></i>
+                        <span class="count"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                         aria-labelledby="notificationDropdown">
+                        <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-success">
+                                    <i class="ti-info-alt mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    Just now
+                                </p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-warning">
+                                    <i class="ti-settings mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">Settings</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    Private message
+                                </p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item preview-item">
+                            <div class="preview-thumbnail">
+                                <div class="preview-icon bg-info">
+                                    <i class="ti-user mx-0"></i>
+                                </div>
+                            </div>
+                            <div class="preview-item-content">
+                                <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                                <p class="font-weight-light small-text mb-0 text-muted">
+                                    2 days ago
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                        <img src="/static/images/faces/face28.jpg" alt="profile"/>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                         aria-labelledby="profileDropdown">
+                        <a class="dropdown-item">
+                            <i class="ti-settings text-primary"></i>
+                            Settings
+                        </a>
+                        <a class="dropdown-item">
+                            <i class="ti-power-off text-primary"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                <span class="icon-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/organizations">
+                        <i class="icon-grid menu-icon"></i>
+                        <span class="menu-title">Организации
+                            </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/purchases">
+                        <i class="mdi mdi-book-multiple menu-icon"></i>
+                        <span class="menu-title">Объявления
+                            </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news">
+                        <i class="mdi mdi-account-card-details menu-icon"></i>
+                        <span class="menu-title">Статистика</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row mb-3">
+                    <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                        <h3 class="font-weight-bold ">Все объявления</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Фильтры</h4>
+                                <form class="forms-sample" id="purchases-filter-form">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="category">Предмет закупок</label>
+                                                <select class="form-control" name="categoryId" id="category">
+                                                    <option>не выбрано</option>
+                                                    <option th:each="category : ${categories}"
+                                                            th:value="${category.id}"
+                                                            th:text="${category.name}"></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Наименование заказчика</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Наименование заказчика">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Номер закупки</label>
+                                                <input type="text" class="form-control" placeholder="Номер закупки">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Стартовая цена</label>
+                                                <input type="text" class="form-control" placeholder="Стартовая цена">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Конечная цена</label>
+                                                <input type="text" class="form-control" placeholder="Конечная цена">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Дата проведения с</label>
+                                                <input type="text" class="form-control" placeholder="Дата проведения с">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Дата проведения по</label>
+                                                <input type="text" class="form-control"
+                                                       placeholder="Дата проведения по">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2">Применить</button>
+                                    <button class="btn btn-light">Сбросить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 grid-margin stretch-card" th:each="purchase : ${purchases.data}">
+                        <div class="card position-relative">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-xl-4 d-flex flex-column justify-content-start">
+                                        <div class="ml-xl-4 mt-3">
+                                            <a class="card-title" th:href="'/purchases/purchase-details?purchaseId=' + ${purchase.id}"
+                                               th:text="${purchase.product} + ' - ' + ${purchase.registration_number}"></a>
+                                            <h1 class="text-primary" th:text="${purchase.starting_price}"></h1>
+                                            <h3 class="font-weight-500 mb-xl-4 text-primary"
+                                                th:text="${purchase.currency_title}">KGS, Сом</h3>
+                                            <p class="font-weight-bold">Предмет закупки : </p>
+                                            <p class="mb-2 mb-xl-0" th:text="${purchase.name} "></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-xl-8">
+                                        <div class="border-right">
+                                            <div class="table-responsive mb-3 mb-md-0 mt-3">
+                                                <ul class="list-arrow">
+                                                    <li>
+                                                        <p class="text-muted">Заказчик :</p>
+                                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                                           th:text="${purchase.organization}"></p>
+                                                    </li>
+                                                    <hr>
+                                                    <li>
+                                                        <p class="text-muted">Дата окончания :</p>
+                                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                                           th:text="${purchase.purchase_end_datetime}"></p>
+                                                    </li>
+                                                    <hr>
+                                                    <li>
+                                                        <p class="text-muted">Статус :</p>
+                                                        <p class="font-weight-bold mb-2 mb-xl-0"
+                                                           th:text="${purchase.status}"></p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" th:href="'/purchases'"><<</a>
+                            </li>
+                            <li class="page-item" th:classappend="${link.active ? 'active' : ''}"
+                                th:each="link : ${purchases.links}">
+                                <a class="page-link"
+                                   th:href="'/purchases?url=' + ${link.url}" th:text="${link.label}"></a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" th:href="'/purchases?url=' + ${purchases.last_page_url}">>></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023.
+                            Академия Роста. Все права защищены</span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="/static/vendors/js/vendor.bundle.base.js"></script>
+<script src="/static/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/static/vendors/chart.js/Chart.min.js"></script>
+<script src="/static/vendors/datatables.net/jquery.dataTables.js"></script>
+<script src="/static/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="/static/js/dataTables.select.min.js"></script>
+
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/static/js/off-canvas.js"></script>
+<script src="/static/js/hoverable-collapse.js"></script>
+<script src="/static/js/template.js"></script>
+<script src="/static/vendors/select2/select2.min.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="/static/js/dashboard.js"></script>
+<script src="/static/custom-js/purchases-filter.js"></script>
+<!-- End custom js for this page-->
+</body>
+
+</html>
